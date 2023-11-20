@@ -17,6 +17,7 @@ Para executar o projeto em sua máquina sigas as instruções a seguir:
 git clone git@github.com:mts-lucas/survivors-bunker-front.git
 
 # Entre no diretório do projeto
+cd survivors-bank-front
 cd bunker
 
 # Instale as dependências
