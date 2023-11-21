@@ -1,0 +1,11 @@
+.text-3xl {
+    font-size: 1.875rem; 
+  }
+  
+  .font-bolder {
+    font-weight: bold;
+  }
+  
+  .underline {
+    text-decoration: underline;
+  }
