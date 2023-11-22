@@ -1,6 +1,7 @@
 import './globals.css';
 import './components/footer'
 import { Footer } from './components/footer';
+import { Header } from './components/header';
 
 export const metadata = {
   title: 'Bunker',
@@ -9,11 +10,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
  return (
-    <html lang="en">
-         <body className="flex flex-col min-h-screen">
-        <div className="flex-grow">{children}</div>
-        <Footer />
-      </body>
-    </html>
+  <html lang="en">
+  <body className="flex flex-col min-h-screen">
+    <Header />
+    <div className="flex-grow">{children}</div>
+    <Footer />
+  </body>
+</html>
   )
 }
