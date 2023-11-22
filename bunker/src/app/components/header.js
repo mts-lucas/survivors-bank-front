@@ -1,5 +1,4 @@
-function Header(){
+export function Header(){
 
 }
 
-export default Header;
