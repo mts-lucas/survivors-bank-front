@@ -1,5 +1,6 @@
 import React from "react"
-import { MyCard } from "./components/card"
+import { CardList } from "./components/cardList"
+
 
 const dados = {
   "id": 1,
@@ -17,8 +18,9 @@ const dados = {
 
 export default function Home() {
   return (
-    <div className="bg-black">
-      <MyCard></MyCard>
+    
+    <div className="justify-center items-center">
+      <CardList dados={dados}></CardList>
     </div>
     
   )
