@@ -10,8 +10,8 @@ export function Header(){
       <div>
         <Logo />
       </div>
-      <div className="flex flex-grow justify-center items-center flex-col">
-        <h1 className="text-2xl font-bold ml-4">Survivors Bunker</h1>
+      <div className="flex flex-grow justify-center items-center flex-col ml-4">
+        <h1 className="text-5xl font-bold">Survivors Bunker</h1>
         <Navbar />
       </div>
     </header>
