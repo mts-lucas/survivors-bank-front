@@ -5,3 +5,8 @@
 html{
     font-size: 60%;
 }
+@layer utilities {
+    .content-auto {
+      content-visibility: auto;
+    }
+  }
