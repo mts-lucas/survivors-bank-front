@@ -1,29 +1,25 @@
+// components/Navbar.js
+"use client";
 import Link from 'next/link';
 
 const NavLink = ({ href, text }) => (
   <Link href={href}>
-    <div className="text-white px-3 py-2 rounded-md bg-red-500 hover:bg-gray-900 text-4xl">
+    <div className="text-white text-xl px-4 py-2 hover:bg-gray-700 hover:rounded-lg transition-colors duration-100">
       {text}
     </div>
   </Link>
 );
 
-export function Navbar() {
+export function Navbar(){
   return (
-    <nav className="bg-your-header-color p-4">
-    <div className="container mx-auto flex justify-between items-center">
-      <Link href="/">
-        <div className="text-white text-3xl cursor-pointer"></div>
-      </Link>
-      <div className="flex space-x-4">
-        <NavLink href="/" text="Home"/>
-        <NavLink href="/about" text="Monstros" />
-        <NavLink href="/contact" text="Personagens" />
+    <nav className="bg-red-600 w-full p-4 text-white">
+      <div className="container mx-auto flex justify-between items-center">
+        <div className="hidden md:flex space-x-4">
+          <NavLink href="/" text="Home" />
+          <NavLink href="/about" text="Monsters" />
+          <NavLink href="/contact" text="Survivors" />
+        </div>
       </div>
-    </div>
-  </nav>
-);
+    </nav>
+  );
 };
-
-
-

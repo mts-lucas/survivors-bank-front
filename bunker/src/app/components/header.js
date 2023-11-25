@@ -12,7 +12,6 @@ export function Header(){
       </div>
       <div className="flex flex-grow justify-center items-center flex-col ml-4">
         <h1 className="text-5xl font-bold">Survivors Bunker</h1>
-        <Navbar />
       </div>
       <Menu />
     </header>

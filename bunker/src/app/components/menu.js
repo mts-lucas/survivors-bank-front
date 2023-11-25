@@ -13,7 +13,7 @@ export function Menu() {
   return (
     <div className="relative">
       <div
-        className="text-white text-2xl cursor-pointer"
+        className="text-white text-3xl cursor-pointer"
         onClick={toggleMenu}
       >
         ☰
@@ -26,17 +26,17 @@ export function Menu() {
         <ul className="list-none p-0 m-0">
           <li className="mb-2">
             <Link href="/">
-              <div className="text-gray-800">Home</div>
+              <div className="text-gray-900 text-lg">Create Account</div>
             </Link>
           </li>
           <li className="mb-2">
             <Link href="/about">
-              <div className="text-gray-800">About</div>
+              <div className="text-gray-900 text-lg">Login</div>
             </Link>
           </li>
           <li>
             <Link href="/contact">
-              <div className="text-gray-800">Contact</div>
+              <div className="text-gray-900 text-lg">About</div>
             </Link>
           </li>
         </ul>

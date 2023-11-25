@@ -4,7 +4,12 @@
 
 html{
     font-size: 60%;
+    height: auto;
+    width: auto;
 }
+.navbar-background {
+    background-color: #3498db; /* Substitua pela cor desejada */
+  }
 @layer utilities {
     .content-auto {
       content-visibility: auto;
