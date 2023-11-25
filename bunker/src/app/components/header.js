@@ -1,6 +1,6 @@
 import { Navbar } from "./navbar";
 import { Logo } from "./image";
-
+import { Menu } from "./menu";
 
 
 export function Header(){
@@ -14,6 +14,7 @@ export function Header(){
         <h1 className="text-5xl font-bold">Survivors Bunker</h1>
         <Navbar />
       </div>
+      <Menu />
     </header>
   );
 }
