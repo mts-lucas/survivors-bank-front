@@ -18,6 +18,9 @@ export default function RootLayout({ children }) {
         <div className="flex justify-center">
           <Navbar />
         </div>
+        <div className='flex justify-center'>
+          <Search />
+        </div>
         <div className="flex-grow">{children}</div>
         <Footer />
       </body>
