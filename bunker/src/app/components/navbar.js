@@ -16,9 +16,9 @@ export function Navbar() {
           <div className="border-r border-red-400 h-14 md:hidden"></div>
           <NavLink href="/" text="Home" />
           <div className="border-r border-red-400 h-14 md:hidden"></div>
-          <NavLink href="/card" text="Monsters" />
+          <NavLink href="/monsters" text="Monsters" />
           <div className="border-r border-red-400 h-14 md:hidden"></div>
-          <NavLink href="/cardlist" text="Survivors" />
+          <NavLink href="/survivors" text="Survivors" />
           <div className="border-r border-red-400 h-14 md:hidden"></div>
         </div>
       </div>
