@@ -7,21 +7,22 @@ const NavLink = ({ href, text }) => (
     </div>
   </Link>
 );
-
-export function Navbar(){
+export function Navbar() {
   return (
     <nav className="bg-red-800 bg-opacity-700 w-full p-4">
       <div className="container mx-auto flex justify-center items-center">
-        <div className="hidden md:flex space-x-5 text-3xl font-bold">
-        <div className="border-r border-red-400 h-14"></div>
+        <div className="flex flex-wrap md:flex-row md:space-x-5 text-3xl font-bold">
+          <div className="border-r border-red-400 h-14 md:hidden"></div>
           <NavLink href="/" text="Home" />
-          <div className="border-r border-red-400 h-14"></div>
+          <div className="border-r border-red-400 h-14 md:hidden"></div>
           <NavLink href="/card" text="Monsters" />
-          <div className="border-r border-red-400 h-14"></div>
+          <div className="border-r border-red-400 h-14 md:hidden"></div>
           <NavLink href="/cardlist" text="Survivors" />
-          <div className="border-r border-red-400 h-14"></div>
+          <div className="border-r border-red-400 h-14 md:hidden"></div>
         </div>
       </div>
     </nav>
   );
-};
+}
+
+
