@@ -7,6 +7,7 @@ const NavLink = ({ href, text }) => (
     </div>
   </Link>
 );
+
 export function Navbar() {
   return (
     <nav className="bg-red-800 bg-opacity-700 w-full p-4">
