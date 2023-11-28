@@ -1,19 +1,21 @@
 // components/RootLayout.js
+import React from 'react';
 import './globals.css';
 import { Footer } from './components/footer';
 import { Header } from './components/header';
 import { Navbar } from './components/navbar';
-import { Search } from './components/search';
 
 export const metadata = {
   title: 'Bunker',
   description: 'Pweb project',
 }
 
-export default function RootLayout({ children }) {
+const RootLayout = ({ children }) => {
+  const backgroundImage = '/spock-zombie.svg'; // Specify your background image path
+
   return (
     <html lang="en" className="h-full">
-      <body className="flex flex-col min-h-screen">
+      <body className="flex flex-col min-h-screen" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover' }}>
         <Header />
         <div className="flex justify-center">
           <Navbar />
@@ -24,3 +26,5 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+export default RootLayout;
