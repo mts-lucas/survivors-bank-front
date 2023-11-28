@@ -11,7 +11,7 @@ export const metadata = {
 }
 
 const RootLayout = ({ children }) => {
-  const backgroundImage = '/spock-zombie.svg'; // Specify your background image path
+  const backgroundImage = '/spock-zombie.svg'; 
 
   return (
     <html lang="en" className="h-full">
