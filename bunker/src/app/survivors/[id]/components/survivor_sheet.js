@@ -21,24 +21,17 @@ export function SurvivorSheet({ sheet }) {
           <p className="text-lg md:text-2xl text-yellow-100">{sheet.characteristics}</p>
         </div>
         <div className="flex flex-col items-center border-2 rounded-xl border-dashed border-yellow-100 p-4 md:p-8 m-4 md:m-8">
-          <h1 className="font-bold text-3xl md:text-4xl my-4 md:my-8 text-yellow-100">Remaining Torments</h1>
-          <p className="text-lg md:text-2xl text-yellow-100">{sheet.remaining_torments}</p>
+          <h1 className="font-bold text-3xl md:text-4xl my-4 md:my-8 text-yellow-100">Torments</h1>
+          <p className="text-lg md:text-2xl text-yellow-100">{sheet.torments}</p>
         </div>
         <div className="flex flex-col items-center border-2 rounded-xl border-dashed border-yellow-100 p-4 md:p-8 m-4 md:m-8">
           <h1 className="font-bold text-3xl md:text-4xl my-4 md:my-8 text-yellow-100">Conditions</h1>
           <p className="text-lg md:text-2xl text-yellow-100">{sheet.conditions}</p>
         </div>
         <div className="flex flex-col items-center border-2 rounded-xl border-dashed border-yellow-100 p-4 md:p-8 m-4 md:m-8">
-          <h1 className="font-bold text-3xl md:text-4xl my-4 md:my-8 text-yellow-100">Conditions</h1>
-          <p className="text-lg md:text-2xl text-yellow-100">{sheet.conditions}</p>
+          <h1 className="font-bold text-3xl md:text-4xl my-4 md:my-8 text-yellow-100"></h1>
+          <p className="text-lg md:text-2xl text-yellow-100">{sheet.conviction}</p>
         </div>
-        
-      
-     
-        
-        
-        
-        
       </div>
     </div>
   );

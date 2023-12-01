@@ -26,8 +26,9 @@ const dados = {
   "updated_at": "2023-11-16T12:34:33.422966Z",
   "name": "Michael Wright",
   "characteristics": "Share development inside believe add. Minute than let management summer nor wife.\r\nChild first federal even can style feel. Return company option. Better soon which significant.",
-  "remaining_torments": "Court set eight side billion strong. Toward recent everything deal piece own line. Task society such choice fact community number. Once task rock main allow hold treat.",
-  "conditions": "Protect improve movie under drop statement nation. Image series continue agency member measure. Will speak small same."
+  "torments": "Court set eight side billion strong. Toward recent everything deal piece own line. Task society such choice fact community number. Once task rock main allow hold treat.",
+  "conditions": "Protect improve movie under drop statement nation. Image series continue agency member measure. Will speak small same.",
+  "conviction": 1
 }
 
 export default function survivorPageID({params}) {
