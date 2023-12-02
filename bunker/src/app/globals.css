@@ -15,3 +15,7 @@ html{
       content-visibility: auto;
     }
   }
+  
+  button.text-white {
+    cursor: pointer;
+  }
