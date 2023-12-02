@@ -34,7 +34,7 @@ export default function monsterPageID({params}) {
 
     return (
 
-    <div className="flex items-center justify-center h-screen relative">
+    <div className="flex items-center justify-center h-screen">
       <MonsterSheet sheet={dados} ></MonsterSheet>
     </div>
     

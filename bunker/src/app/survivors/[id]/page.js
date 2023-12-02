@@ -35,7 +35,7 @@ export default function survivorPageID({params}) {
 
     return (
 
-    <div className="flex items-center justify-center h-screen relative">
+    <div className="flex items-center justify-center h-screen">
       <SurvivorSheet sheet={dados} ></SurvivorSheet>
     </div>
     
