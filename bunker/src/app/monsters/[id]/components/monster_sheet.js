@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 export function MonsterSheet({ sheet }) {
   return (
     <div className="bg-gray-900 border-solid border-yellow-100 border-4 rounded-3xl flex flex-col text-yellow-100 p-4 md:p-8 mt-8 mb-16 max-w-screen-xl mx-auto w-11/12">
@@ -29,7 +27,6 @@ export function MonsterSheet({ sheet }) {
         <h1 className="font-bold text-3xl md:text-4xl my-4 md:my-8 text-red-500">Conditions</h1>
         <p className="text-lg md:text-2xl">{sheet.conditions}</p>
       </div>
-      <Pagination />
     </div>
   );
 }
