@@ -22,7 +22,7 @@ export function Menu() {
         className={`absolute top-16 right-0 bg-white p-4 shadow-md rounded-md ${
           isMenuVisible ? '' : 'hidden'
         }`}
-      >
+      >z
         <ul className="list-none p-0 m-0">
           <li className="mb-2">
             <Link href="/">
