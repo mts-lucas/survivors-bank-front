@@ -31,7 +31,7 @@ export function SurvivorSheet({ sheet }) {
         <div className="flex flex-col items-center border-2 rounded-xl border-dashed border-yellow-100 p-4 md:p-8 m-4 md:m-8">
           <h1 className="font-bold text-3xl md:text-4xl my-4 md:my-8 text-yellow-100"></h1>
           <p className="text-lg md:text-2xl text-yellow-100">{sheet.conviction}</p>
-        </div>z
+        </div>
       </div>
     </div>
   );
