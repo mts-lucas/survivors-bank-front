@@ -1,4 +1,3 @@
-// components/Menu.js
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
@@ -32,42 +31,42 @@ export function Menu() {
   return (
     <div className="relative" ref={menuRef}>
       <div
-        className="text-white text-5xl cursor-pointer"
+        className="text-white text-5xl cursor-pointer transition duration-300 transform hover:scale-110"
         onClick={toggleMenu}
       >
         ☰
       </div>
       <div
-        className={`absolute top-16 right-0 bg-white p-10 shadow-md rounded-md ${isMenuVisible ? '' : 'hidden'}`}
-      >
+        className={`absolute top-16 right-0 bg-gray-800 p-10 shadow-md rounded-md overflow-hidden ${isMenuVisible ? 'scale-y-100 opacity-100' : 'scale-y-0 opacity-0 invisible'} transition-transform transform origin-top-right ease-in-out duration-300`}
+      >   
+        <div className="flex items-center mb-4">
+          <img
+            src="/logo2.png" 
+            alt="Menu Icon"
+            className="h-8 w-8 rounded-full mr-2" 
+          />
+          <span className="text-white text-xl font-semibold">Bem vindo {}</span>
+        </div>
+
         <ul className="list-none p-0 m-0">
           <li className="mb-2">
             <Link href="/">
-              <div
-                className="menu-option bg-gray-100 hover:bg-gray-200 p-5 cursor-pointer"
-                onClick={handleMenuItemClick}
-              >
-                <span className="text-gray-900 text-3xl p-5">Create Account</span>
+              <div onClick={handleMenuItemClick}>
+                <span className="text-white text-3xl font-semibold hover:text-blue-500 transition duration-300 block py-5 px-10 bg-gray-700 rounded-md">Create Account</span>
               </div>
             </Link>
           </li>
           <li className="mb-2">
             <Link href="/monsters">
-              <div
-                className="menu-option bg-gray-100 hover:bg-gray-200 p-5 cursor-pointer"
-                onClick={handleMenuItemClick}
-              >
-                <span className="text-gray-900 text-3xl p-5">Login</span>
+              <div onClick={handleMenuItemClick}>
+                <span className="text-white text-3xl font-semibold hover:text-blue-500 transition duration-300 block py-5 px-10 bg-gray-700 rounded-md">Login</span>
               </div>
             </Link>
           </li>
           <li>
             <Link href="/survivors">
-              <div
-                className="menu-option bg-gray-100 hover:bg-gray-200 p-5 cursor-pointer"
-                onClick={handleMenuItemClick}
-              >
-                <span className="text-gray-900 text-3xl p-5">About</span>
+              <div onClick={handleMenuItemClick}>
+                <span className="text-white text-3xl font-semibold hover:text-blue-500 transition duration-300 block py-5 px-10 bg-gray-700 rounded-md">About</span>
               </div>
             </Link>
           </li>
