@@ -2,9 +2,9 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="fixed bottom-0 w-full bg-gradient-to-r from-black via-gray-800 to-black text-white p-8 text-center text-2xl">
-      <div className="flex flex-col items-center">
-        <div className="mb-4 flex items-center justify-center">
+    <footer className="bottom-0 w-full bg-gradient-to-r from-black via-gray-800 to-black text-white p-8 text-center text-2xl">
+      <div className="md:flex md:justify-between md:items-center sm:px-12 px-4">
+      <div className="mb-4 flex items-center justify-center">
           <span className="mr-2">Developed by:</span>
           <Link href="https://github.com/mts-lucas" target='_blank'>
             <p className="flex items-center hover:text-gray-300">
