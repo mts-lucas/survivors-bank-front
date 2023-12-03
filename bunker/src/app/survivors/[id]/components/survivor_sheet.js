@@ -1,4 +1,5 @@
 import React from "react";
+import Image from 'next/image'
 
 export function SurvivorSheet({ sheet }) {
   return (
@@ -9,11 +10,18 @@ export function SurvivorSheet({ sheet }) {
             <h1 className="font-bold text-4xl md:text-6xl text-yellow-100">{sheet.name}</h1>
           </div>
           <div className="mb-4 md:m-8">
-            <img
+            <Image
+              src="/assets/survivor-avatar.svg"
+              width={500}
+              height={500}
+              alt="Picture of the author"
+              className="w-full md:min-w-36 md:max-w-xl rounded-xl border-2 p-2 border-yellow-100"
+            />
+            {/* <img
               src="https://img.olhardigital.com.br/wp-content/uploads/2023/08/pokemon-anime.jpg"
               alt="cover"
               className="w-full md:min-w-36 md:max-w-xl rounded-xl border-2 p-2 border-yellow-100"
-            />
+            /> */}
           </div>
         </div>
         <div className="flex flex-col items-center border-2 rounded-xl border-dashed border-yellow-100 p-4 md:p-8 m-4 md:m-8">
