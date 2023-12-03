@@ -16,11 +16,6 @@ export function MonsterSheet({ sheet }) {
               alt="Picture of the author"
               className="w-full md:min-w-36 md:max-w-xl rounded-xl border-2 p-2 border-red-500 "
           />
-          {/* <img
-            src="https://img.olhardigital.com.br/wp-content/uploads/2023/08/pokemon-anime.jpg"
-            alt="cover"
-            className="w-full md:min-w-36 md:max-w-xl rounded-xl border-2 p-2 border-red-500 "
-          /> */}
         </div>
       </div>
       <div className="flex flex-col items-center border-2 rounded-xl border-dashed border-yellow-100 p-4 md:p-8 m-4 md:m-8">
