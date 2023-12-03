@@ -2,7 +2,7 @@ import fetcher from './fetcher'
 
 export async function getAllMonsters() {
     const monstersPerPage = 10;
-    const respage = await fetch(`https://bunkerapi.onrender.com/bunker/api/v1/monsters/`, {next: {revalidate: 1800}});
+    const respage = await fetch(`https://bunkerapi.onrender.com/bunker/api/v1/monsters/`, {next: {revalidate: 600}});
     const jsonpage = await respage.json();
   
     const totalMonsters = jsonpage.count;
