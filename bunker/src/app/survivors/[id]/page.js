@@ -14,7 +14,6 @@ export async function generateStaticParams() {
 
 export default async function survivorPageID({params}) {
 
-    const { id } = params.id
 
     const data = await fetcher(`https://bunkerapi.onrender.com/bunker/api/v1/survivors/${params.id}`) 
 
