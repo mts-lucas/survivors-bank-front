@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { CardList } from "../components/cardList";
+
 
 export function MyCard({ sheet, url }) {
   return (

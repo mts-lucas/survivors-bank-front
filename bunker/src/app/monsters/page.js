@@ -1,9 +1,12 @@
-export default function Page() {
+import {CardList} from "../components/cardList"
+import {fetcher} from "../services/fetcher"
+
+
+export default async function Page() {
+  const data = await fetcher("https://bunkerapi.onrender.com/bunker/api/v1/monsters/");
   return (
   <div className="flex items-center justify-center h-screen">
-    <h1 className="text-3xl font-bold underline z-10 text-white">
-      monsters 
-  </h1>
-</div>
+      <CardList data={data.results} url={"monster"} />
+  </div>
   )
-  }
+}

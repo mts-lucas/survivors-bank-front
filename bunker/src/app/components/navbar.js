@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 
+
 const NavLink = ({ href, text }) => (
   <Link href={href}>
     <div className="text-yellow-100 text-4xl px-4 py-2 hover:bg-red-600 hover:rounded-lg transition-colors duration-100">
