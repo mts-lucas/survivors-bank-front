@@ -12,7 +12,7 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
         <button
           key={number}
           onClick={() => onPageChange(number)}
-          className={`mx-2 px-4 py-2 bg-yellow-100 text-red-800 rounded ${
+          className={`mx-2 px-5 py-2 text-2xl bg-yellow-100 text-red-800 rounded ${
             currentPage === number ? "font-bold" : ""
           }`}
         >
