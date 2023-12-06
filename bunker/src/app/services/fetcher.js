@@ -1,16 +1,9 @@
-
 export async function fetcher(url) {
-    try{
 
-        const res = await fetch(url);
+    const res = await fetch(url);
 
-        const json = await res.json();
-    
-        return json;
-    }catch(err){
+    const json = await res.json();
 
-        console.log(err);
-        
-    }
+    return json;
 
 }
