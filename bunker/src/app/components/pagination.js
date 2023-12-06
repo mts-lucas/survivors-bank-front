@@ -7,12 +7,12 @@ const Pagination = ({ totalPages, currentPage, onPageChange }) => {
   }
 
   return (
-    <div className="flex justify-center mt-4">
+    <div className="flex justify-center my-4">
       {pageNumbers.map((number) => (
         <button
           key={number}
           onClick={() => onPageChange(number)}
-          className={`mx-2 px-5 py-2 text-2xl bg-yellow-100 text-red-800 rounded ${
+          className={`mx-2 px-5 py-2 text-2xl bg-red-800 text-yellow-200 rounded ${
             currentPage === number ? "font-bold" : ""
           }`}
         >
