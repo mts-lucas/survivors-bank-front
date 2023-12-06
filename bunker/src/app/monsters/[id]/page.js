@@ -4,7 +4,6 @@ import { getAllMonsters } from "../../services/get-all-monsters"
 import { fetcher } from "../../services/fetcher"
 
 
-
 export async function generateStaticParams() {
   const sheets = await getAllMonsters();
  
