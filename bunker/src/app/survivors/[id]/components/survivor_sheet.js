@@ -7,7 +7,7 @@ export function SurvivorSheet({ sheet }) {
       <div className="container mx-auto overflow-y-auto" style={{ maxHeight: 'calc(100vh - 100px)' }}>
         <div className="flex flex-col md:flex-row justify-around items-center">
           <div className="mb-4 md:m-8">
-            <h1 className="font-bold text-4xl md:text-6xl text-yellow-100">{sheet.name} {sheet.nickname}</h1>
+            <h1 className="font-bold text-4xl md:text-6xl text-yellow-100">{sheet.name} {sheet.codename}</h1>
           </div>
           <div className="mb-4 md:m-8">
             <Image
