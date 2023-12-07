@@ -1,18 +1,23 @@
-// Search.js
 import { useState } from 'react';
 
 export default function Search({ onSearch }) {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [term, setTerm] = useState('');
 
-  const handleSearch = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    onSearch(searchTerm);
+    onSearch(term.toLowerCase());
   };
 
   return (
-    <form onSubmit={handleSearch}>
-      <input type="text" value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} className="border p-2 rounded text-2xl" />
-      <button type="submit" className="bg-red-600 text-yellow-100 text-3xl px-4 py-2 rounded ml-2">Search</button>
+    <form onSubmit={onSubmit} className="flex justify-center items-center">
+      <input
+        type="text"
+        value={term}
+        onChange={(e) => setTerm(e.target.value)}
+        placeholder="Search..."
+        className="w-full p-2 border border-gray-300 rounded-md"
+      />
+      <button type="submit" className="ml-2 px-4 py-2 bg-red-600 text-yellow-200 text-2xl rounded-md">Search</button>
     </form>
   );
 }
