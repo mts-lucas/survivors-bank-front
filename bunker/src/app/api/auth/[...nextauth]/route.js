@@ -1,5 +1,6 @@
 import NextAuth from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
+import jwt from "next-auth/jwt";
 
 
 const nextAuthOptions = {
@@ -20,7 +21,7 @@ const nextAuthOptions = {
                 headers: { "Content-Type": "application/json" }
             })
 
-            const user = await res.json()
+            const user = await res.json();
     
             if (res.ok && user) {
                 return user
@@ -29,6 +30,35 @@ const nextAuthOptions = {
           }
         })
       ],
+    callbacks: {
+      async jwt({ token, user, account, profile, isNewUser}) {
+    
+        if (user) {
+          token.accessToken = user.access
+        }
+
+        return token
+      },
+
+      async session({session, token}){
+
+        session.accessToken = token.accessToken;
+        const API_URL = 'https://bunkerapi.onrender.com/bunker/api/v1/';
+
+        const config = {
+          headers: { Authorization: `Bearer ${token.accessToken}` },
+          method: 'GET',
+        };
+
+        let userData = await fetch(`${API_URL}whoiam`, config)
+
+        session.user = await userData.json()
+
+        return session;
+
+      },
+    }
+
 }
 
 const handler = NextAuth(nextAuthOptions)

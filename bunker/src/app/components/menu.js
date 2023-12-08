@@ -50,7 +50,7 @@ export function Menu() {
             alt="Menu Icon"
             className="h-8 w-8 rounded-full mr-2"
           />
-          <span className="text-white text-xl font-semibold">Bem-vindo {session?.user?.name}</span>
+          <span className="text-white text-xl font-semibold">Bem-vindo {session?.user?.nickname}</span>
         </div>
 
         <ul className="list-none p-0 m-0">
