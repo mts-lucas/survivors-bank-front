@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { signIn } from 'next-auth/react';
 
 export function Menu() {
   const [isMenuVisible, setMenuVisibility] = useState(false);
@@ -61,7 +62,7 @@ export function Menu() {
           </li>
           <li className="mb-2">
             <Link href="/monsters">
-              <div onClick={handleMenuItemClick}>
+              <div onClick={() => signIn()}>
                 <span className="text-white text-3xl font-semibold hover:text-blue-500 transition duration-300 block py-5 px-10 bg-gray-700 rounded-md">Login</span>
               </div>
             </Link>
