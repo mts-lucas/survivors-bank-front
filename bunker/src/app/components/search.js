@@ -1,37 +1,23 @@
-// components/Menu.js
-"use client";
 import { useState } from 'react';
 
-export function Search() {
-  const [searchQuery, setSearchQuery] = useState('');
+export default function Search({ onSearch }) {
+  const [term, setTerm] = useState('');
 
-  const handleInputChange = (e) => {
-    setSearchQuery(e.target.value);
-  };
-
-  const handleSearchSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica para lidar com a pesquisa, por exemplo, redirecionar para uma página de resultados.
-    console.log('Search submitted:', searchQuery);
+    onSearch(term.toLowerCase());
   };
 
   return (
-    <form onSubmit={handleSearchSubmit} className="flex items-center">
+    <form onSubmit={onSubmit} className="flex justify-center items-center">
       <input
         type="text"
+        value={term}
+        onChange={(e) => setTerm(e.target.value)}
         placeholder="Search..."
-        value={searchQuery}
-        onChange={handleInputChange}
-        className="border border-gray-300 px-2 py-1 mr-2 rounded-md"
+        className="w-full p-2 border border-gray-300 rounded-md"
       />
-      <button
-        type="submit"
-        className="bg-red-700 text-white px-3 py-1 rounded-md"
-      >
-        Search
-      </button>
+      <button type="submit" className="ml-2 px-4 py-2 bg-red-600 text-yellow-200 text-2xl rounded-md">Search</button>
     </form>
   );
-};
-
-
+}
