@@ -12,7 +12,7 @@ export default function Page() {
   const [totalPages, setTotalPages] = useState(1); 
 
   const fetchPageData = async (pageNumber, searchTerm) => {
-    const url = `https://bunkerapi.onrender.com/bunker/api/v1/monsters/?page=${pageNumber}&search=${searchTerm}`;
+    const url = `https://bunkerapi.onrender.com/bunker/api/v1/monsters/?page=${pageNumber}&s=${searchTerm}`;
     const response = await fetch(url);
     const newData = await response.json();
     setData(newData.results);
@@ -25,24 +25,15 @@ export default function Page() {
     fetchPageData(pageNumber, searchTerm);
   };
 
-  const onSearch = async (searchTerm) => {
+  const onSearch = (searchTerm) => {
     setSearchTerm(searchTerm);
+    fetchPageData(currentPage, searchTerm);
+  };
 
-    if (searchTerm) {
-      let allData = [];
-      for (let i = 1; i <= totalPages; i++) { 
-        const url = `https://bunkerapi.onrender.com/bunker/api/v1/monsters/?page=${i}&search=${searchTerm}`;
-        const response = await fetch(url);
-        const newData = await response.json();
-        allData = [...allData, ...newData.results];
-      }
-
-      const filteredData = allData.filter(item => item.name.toLowerCase().includes(searchTerm.toLowerCase()));
-      setData(filteredData);
-      setNoResults(filteredData.length === 0);
-    } else {
-      fetchPageData(currentPage, '');
-    }
+  const onBack = () => {
+    setCurrentPage(1);
+    setSearchTerm('');
+    fetchPageData(1, '');
   };
 
   useEffect(() => {
@@ -52,9 +43,25 @@ export default function Page() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen">
       <Search onSearch={onSearch} />
-      {noResults ? <p className="mt-4 text-white text-3xl">Not Found.</p> : <CardList data={data} url={"monster"} />}
+      {noResults ? (
+        <div className="flex flex-col items-center justify-center">
+          <p className="mt-4 text-white text-3xl p-10">Not Found.</p>
+          <button onClick={onBack} className="mt-4 bg-red-600 hover:bg-red-700 text-yellow-100 text-3xl font-bold py-2 px-4 rounded">
+            Back
+          </button>
+        </div>
+      ) : (
+        <>
+          <CardList data={data} url={"monster"} />
+          {searchTerm !== '' && (
+            <button onClick={onBack} className="mt-4 bg-red-600 hover:bg-red-700 text-yellow-100 text-3xl font-bold py-2 px-4 rounded">
+              Back
+            </button>
+          )}
+        </>
+      )}
       <div className="flex-grow" />
-      <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={onPageChange} /> {}
+      {searchTerm === '' && <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={onPageChange} />}
     </div>
   );
 };
