@@ -29,11 +29,6 @@ const nextAuthOptions = {
           }
         })
       ],
-
-      pages: {
-        singIn: "/auth/login"
-      },
-
 }
 
 const handler = NextAuth(nextAuthOptions)
