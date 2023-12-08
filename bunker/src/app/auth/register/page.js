@@ -8,11 +8,37 @@ export default function LoginForm () {
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
-  const router = useRouter()
+  const router = useRouter();
 
-  async function handleSubmit(e){
+  async function handleSubmit(e) {
     e.preventDefault();
-  };
+
+    const data = {
+      email,
+      username,
+      password,
+      password2,
+    };
+
+    try {
+      const response = await fetch('https://bunkerapi.onrender.com/bunker/api/v1/register/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        router.replace('/api/auth/signin');
+      } else {
+        console.error('Registration failed');
+      }
+    } catch (error) {
+      console.error('Error during registration:', error);
+    }
+  }
+
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-black">
@@ -21,13 +47,24 @@ export default function LoginForm () {
         <form onSubmit={handleSubmit}>
           <div className="mt-4">
             <div>
-              <label className="block" htmlFor="email">
+              <label className="block" htmlFor="username">
                 Username
               </label>
               <input
                 type="text"
                 placeholder="Username"
                 onChange={(e) => setUserName(e.target.value)}
+                className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
+              />
+            </div>
+            <div>
+              <label className="block" htmlFor="email">
+                Email
+              </label>
+              <input
+                type="text"
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
               />
             </div>
@@ -39,6 +76,17 @@ export default function LoginForm () {
                 type="password"
                 placeholder="Password"
                 onChange={(e) => setPassword(e.target.value)}
+                className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
+              />
+            </div>
+            <div className="mt-4">
+              <label className="block" htmlFor="password2">
+                Password
+              </label>
+              <input
+                type="password"
+                placeholder="Password2"
+                onChange={(e) => setPassword2(e.target.value)}
                 className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
               />
             </div>
