@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from 'next/navigation';
+import Image from "next/image";
 
 export default function HomeCreate() {
   const router = useRouter();
@@ -9,19 +10,25 @@ export default function HomeCreate() {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-200">
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4"
-        onClick={() => handleButtonClick('/create/monsters')}
-      >
-        Create Monsters
-      </button>
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-4"
-        onClick={() => handleButtonClick('/create/survivors')}
-      >
-        Create Survivors
-      </button>
+    <div className="flex justify-center items-center h-screen ">
+      <div className="m-5 p-10 bg-red-500 hover:bg-blue-700 text-white text-5xl font-bold text-center rounded cursor-pointer" onClick={() => handleButtonClick('/create/monsters')}>
+      <Image
+            src="/assets/monstro3.png"
+            width={500}
+            height={500}
+            alt="Picture Monster"
+          />
+        <p className='p-10'>Create Monster</p>
+      </div>
+      <div className="m-5 p-10 bg-red-500 hover:bg-blue-700 text-white text-5xl font-bold text-center rounded cursor-pointer" onClick={() => handleButtonClick('/create/survivors')}>
+      <Image
+            src="/assets/survivor2.png"
+            width={470}
+            height={470}
+            alt="Picture Survivor"
+          />
+        <p className='p-10'>Create Survivor</p>
+      </div>
     </div>
   );
 }

@@ -11,6 +11,7 @@ export default function MonsterForm() {
   const [conditions, setConditions] = useState('');
   const [statusMessage, setStatusMessage] = useState('');
   const { data: session } = useSession();
+  const backgroundImage = '/spock-zombie.svg'; 
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -21,13 +22,15 @@ export default function MonsterForm() {
       remaining_torments,
       conditions,
     };
-
+    
     try {
+
       const response = await fetch('https://bunkerapi.onrender.com/bunker/api/v1/monsters/', {
+      credentials: 'include',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${session.accessToken}`
+        'Authorization': `Bearer ${session?.acessToken}` 
       },
       body: JSON.stringify(data),
     });
@@ -44,8 +47,10 @@ export default function MonsterForm() {
   }
 
   return (
-    <div className="flex justify-center items-center h-screen bg-gray-200">
+    <div className="flex justify-center items-center h-screen">
+      <div className="flex items-center justify-center min-h-screen bg-black bg-cover transition-all duration-500 ease-in-out" style={{ backgroundImage: `url(${backgroundImage})`}}></div>
       <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+        
         {statusMessage && (
           <div className="mb-4">
             <span className="text-green-500">{statusMessage}</span>
