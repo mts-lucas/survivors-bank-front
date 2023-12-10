@@ -1,8 +1,7 @@
 
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
-
+import { useSession } from 'next-auth/react';
 
 const NavLink = ({ href, text }) => (
   <Link href={href}>
@@ -13,6 +12,8 @@ const NavLink = ({ href, text }) => (
 );
 
 export function Navbar() {
+  const { data: session } = useSession(); 
+
   return (
     <nav className="bg-red-800 bg-opacity-700 w-full p-4">
       <div className="container mx-auto flex justify-center items-center">
@@ -24,9 +25,14 @@ export function Navbar() {
           <div className="border-r border-red-400 h-14 md:hidden"></div>
           <NavLink href="/survivors" text="Survivors" />
           <div className="border-r border-red-400 h-14 md:hidden"></div>
+          {session && (
+            <>
+              <div className="border-r border-red-400 h-14 md:hidden"></div>
+              <NavLink href="/create" text="Create" />
+            </>
+          )}
         </div>
       </div>
     </nav>
   );
 }
-
