@@ -10,42 +10,50 @@ export default function MonsterForm() {
   const [name, setName] = useState('');
   const [characteristics, setCharacteristics] = useState('');
   const [remaining_torments, setRemainingTorments] = useState('');
+  const [author_comment, setAuthorComment] = useState ('');
   const [conditions, setConditions] = useState('');
   const [statusMessage, setStatusMessage] = useState('');
   const { data: session } = useSession();
   const backgroundImage = '/spock-zombie.svg'; 
-  const logoImage = '/assets/monstro2.png';
 
   async function handleSubmit(e) {
     e.preventDefault();
 
     const data = {
-      name,
-      characteristics,
-      remaining_torments,
-      conditions,
+        name,
+        characteristics,
+        remaining_torments,
+        conditions,
+        author_comment,
     };
     
     try {
-
       const response = await fetch('https://bunkerapi.onrender.com/bunker/api/v1/monsters/', {
-      credentials: 'include',
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${session?.acessToken}` 
-      },
-      body: JSON.stringify(data),
-    });
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${session?.accessToken}` 
+        },
+        body: JSON.stringify(data),
+      });
 
       if (response.ok) {
-        setStatusMessage('Ficha de monstro salva com sucesso!');
+        setStatusMessage({
+          text: 'Monster sheet saved successfully!',
+          type: 'success'
+        });
       } else {
-        setStatusMessage('Falha ao salvar a ficha de monstro.');
+        setStatusMessage({
+          text: 'Failed to save monster sheet.',
+          type: 'error'
+        });
       }
     } catch (error) {
       console.error('Error during saving monster sheet:', error);
-      setStatusMessage('Erro durante a gravação da ficha de monstro.');
+      setStatusMessage({
+        text: 'Error during saving monster sheet.',
+        type: 'error'
+      });
     }
   }
 
@@ -54,17 +62,19 @@ export default function MonsterForm() {
       <div className="flex items-center justify-center min-h-screen bg-black bg-cover transition-all duration-500 ease-in-out" style={{ backgroundImage: `url(${backgroundImage})`}}></div>
       <form onSubmit={handleSubmit} className="bg-gradient-to-r from-red-900 via-black to-red-900 shadow-2xl rounded-2xl px-16 pt-10 pb-12 mb-4 max-w-3xl mx-8">
         
-        {statusMessage && (
-          <div className="mb-4">
-            <span className="text-black">{statusMessage}</span>
+      {statusMessage && (
+          <div className={`mb-4 ${statusMessage.type === 'success' ? 'text-green-500' : 'text-red-500'}`}>
+            <span className="text-3xl flex items-center justify-center">{statusMessage.text}</span>
           </div>
         )}
+
         <div className="flex items-center justify-center mb-8">
         <Image
-            src="/assets/monstro2.png"
+            src="/assets/zumbie5.avif" 
             width={200}
             height={200}
             alt="Picture Monster"
+            style={{ borderRadius: '50%' }} 
           />
           <h1 className="text-4xl p-3 font-bold text-center text-yellow-100 transition-all duration-500 ease-in-out">Create Your Monster!</h1>
         </div>
@@ -79,6 +89,12 @@ export default function MonsterForm() {
             Characteristics:
           </label>
           <textarea className="shadow appearance-none border border-gray-700 rounded w-full py-3 px-4 text-black text-3xl leading-tight focus:outline-none focus:shadow-outline focus:ring-4 focus:ring-red-500" value={characteristics} onChange={(e) => setCharacteristics(e.target.value)} />
+        </div>
+        <div className="mb-4">
+          <label className="block text-yellow-100 text-4xl font-bold mb-2">
+            Author Comment:
+          </label>
+          <textarea className="shadow appearance-none border border-gray-700 rounded w-full py-3 px-4 text-black text-3xl leading-tight focus:outline-none focus:shadow-outline focus:ring-4 focus:ring-red-500" value={author_comment} onChange={(e) => setAuthorComment(e.target.value)} />
         </div>
         <div className="mb-4">
           <label className="block text-yellow-100 text-4xl font-bold mb-2">
