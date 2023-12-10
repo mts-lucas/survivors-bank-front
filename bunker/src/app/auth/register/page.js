@@ -9,6 +9,8 @@ export default function LoginForm () {
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
   const router = useRouter();
+  const backgroundImage = '/spock-zombie.svg'; 
+  const logoImage = '/assets/images.jpeg';
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -39,65 +41,58 @@ export default function LoginForm () {
     }
   }
 
-
   return (
-    <div className="flex items-center justify-center min-h-screen bg-black">
-      <div className="px-8 py-6 mt-4 text-left bg-white shadow-lg">
-        <h3 className="text-2xl font-bold text-center">Register your account</h3>
-        <form onSubmit={handleSubmit}>
-          <div className="mt-4">
-            <div>
-              <label className="block" htmlFor="username">
-                Username
-              </label>
-              <input
-                type="text"
-                placeholder="Username"
-                onChange={(e) => setUserName(e.target.value)}
-                className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
-              />
-            </div>
-            <div>
-              <label className="block" htmlFor="email">
-                Email
-              </label>
-              <input
-                type="text"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
-              />
-            </div>
-            <div className="mt-4">
-              <label className="block" htmlFor="password">
-                Password
-              </label>
-              <input
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-                className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
-              />
-            </div>
-            <div className="mt-4">
-              <label className="block" htmlFor="password2">
-                Password
-              </label>
-              <input
-                type="password"
-                placeholder="Password2"
-                onChange={(e) => setPassword2(e.target.value)}
-                className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600"
-              />
-            </div>
-            <div className="flex items-baseline justify-between">
-              <button
-                type="submit"
-                className="px-6 py-2 mt-4 text-white bg-blue-600 rounded-lg hover:bg-blue-900"
-              >
-                Login
-              </button>
-            </div>
+    <div className="flex items-center justify-center min-h-screen bg-black bg-cover transition-all duration-500 ease-in-out" style={{ backgroundImage: `url(${backgroundImage})` }}>
+      <div className="px-8 py-6 mt-4 text-left bg-gradient-to-r from-red-600 via-black to-red-600 shadow-lg rounded-lg transition-all duration-500 ease-in-out">
+        <div className="flex items-center justify-center mb-8">
+          <img src={logoImage} alt="Logo" className="w-20 h-20 mr-4 rounded-full transition-all duration-500 ease-in-out"/> 
+          <h1 className="text-4xl p-3 font-bold text-center text-yellow-100 transition-all duration-500 ease-in-out">Welcome to Survivors Bunker!</h1>
+        </div>
+        <h3 className="text-3xl font-bold text-center text-yellow-100 mb-8 transition-all duration-500 ease-in-out">Register your account</h3>
+        <form onSubmit={handleSubmit} className="space-y-4 text-black p-10 text-2xl transition-all duration-500 ease-in-out">
+          <div>
+            <label className="block text-yellow-100 mb-2 transition-all duration-500 ease-in-out" htmlFor="username">Username</label>
+            <input
+              type="text"
+              placeholder="Username"
+              onChange={(e) => setUserName(e.target.value)}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 text-black transition-all duration-500 ease-in-out transform focus:scale-105"
+            />
+          </div>
+          <div>
+            <label className="block text-yellow-100 mb-2 transition-all duration-500 ease-in-out" htmlFor="email">Email</label>
+            <input
+              type="text"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 text-black transition-all duration-500 ease-in-out transform focus:scale-105"
+            />
+          </div>
+          <div>
+            <label className="block text-yellow-100 mb-2 transition-all duration-500 ease-in-out" htmlFor="password">Password</label>
+            <input
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 text-black transition-all duration-500 ease-in-out transform focus:scale-105"
+            />
+          </div>
+          <div>
+            <label className="block text-yellow-100 mb-2 transition-all duration-500 ease-in-out" htmlFor="password2">Confirm Password</label>
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              onChange={(e) => setPassword2(e.target.value)}
+              className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-1 focus:ring-blue-600 text-black transition-all duration-500 ease-in-out transform focus:scale-105"
+            />
+          </div>
+          <div className="flex items-baseline justify-between">
+          <button
+            type="submit"
+            className="px-6 py-2 mt-4 text-yellow-100 bg-red-500 rounded-lg hover:bg-black transition-all duration-500 ease-in-out transform scale-100 hover:scale-105"
+          >
+            Register
+          </button>
           </div>
         </form>
       </div>
