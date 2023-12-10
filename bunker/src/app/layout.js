@@ -12,6 +12,9 @@ import { nextAuthOptions } from "./utils/authOptions"
 export const metadata = {
   title: 'Bunker',
   description: 'Pweb project',
+  icons: {
+    icon: "/assets/fav-rounded.png"
+  }
 }
 
 export default async function RootLayout ({ children }){
